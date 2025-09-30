@@ -1,0 +1,15 @@
+<section class="products" id="products">
+  <div class="container">
+    <h2 class="products-title">Описание пиццы</h2>
+    <div class="product-item">
+        <div class="product-image" *ngIf="product.image">
+          <img src="{{product.image}}">
+        </div>
+        <custom-title [title]="product.title" #customTitle></custom-title>
+        <div class="product-text">{{product.description}}</div>
+        <div class="product-action" #elem>
+          <a class="btn btn-add-to-cart" routerLink="/order" [queryParams]="{product: product.title}">В корзину</a>
+        </div>
+    </div>
+  </div>
+</section>

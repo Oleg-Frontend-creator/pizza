@@ -1,0 +1,17 @@
+import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
+
+@Directive({
+  selector: '[isChicken]'
+})
+export class IsChickenDirective {
+
+  constructor(
+    private templateRef: TemplateRef<any>,
+    private viewContainer: ViewContainerRef
+  ) {  }
+
+  @Input()
+  set isChicken(description: string) {
+    description.toLowerCase().includes('кур') ? this.viewContainer.createEmbeddedView(this.templateRef) : this.viewContainer.clear();
+  }
+}
