@@ -46,7 +46,6 @@ export class MainComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    console.log(environment.production);
     this.subscription = this.subject.subscribe({
       next: (param: number) => console.log('subscriber 1: ', param),
       error: (err: string) => console.log('This is error text: ' + err)
